@@ -1,0 +1,75 @@
+<h1 class="mt-4">Produtos</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Consulta de Produtos</li>
+</ol>
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success" role="alert" *ngIf ="mensagenSucesso">
+                {{mensagenSucesso}}
+              </div>
+            <div class="alert alert-danger" role="alert" *ngIf="mensagemErro">
+                {{mensagemErro}}                                   
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                       <th>ID</th>
+                       <th>Nome do Produto</th>
+                       <th>Descrição do Produto</th>
+                       <th>Valor</th>
+                       <th>Data de Cadastro</th>
+                       <th></th>
+                    </tr>
+                </thead>
+                    <tr *ngFor = "let produto of produto">
+                        <td>{{ produto.id}}</td>
+                        <td>{{produto.nomeProduto}}</td> 
+                        <td>{{produto.descricaoProduto}}</td> 
+                        <td>{{ produto.valorProduto}}</td> 
+                        <td>{{produto.dataCadastro}}</td> 
+                        <td>
+                            <button class="btn btn-primary" routerLink="/produto-form/{{produto.id}}">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button class="btn btn-danger ml-1" data-toggle="modal" data-target="#modalDelecao" (click)="preparaDelecao(produto)">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </td>                                                                     
+                    </tr>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-warning" (click)="novoCadastro()"><i class="fa fa-plus" ></i> Novo Cadastro </button>            
+        </div>
+    </div>   
+    <div id="modalDelecao" class="modal-fade" role="role-dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Confirmação</h4>
+                </div>
+                <div class="modal-body" *ngIf="produtoSelecionado">
+                    Confirma a deleção do produto {{produtoSelecionado.nomeProduto}} ?
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" (click)="deletarProduto()" data-dismiss="modal" >Confirmar</button>
+                    <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+
+</div>

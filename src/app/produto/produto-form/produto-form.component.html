@@ -1,0 +1,81 @@
+<h1 class="mt-4">Produtos</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">{{produto.id ? 'Editar Produto': 'Cadastro de Produto'}}</li>
+</ol>
+
+<div class="container">
+
+    <form #produtoForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert" *ngIf ="success==true">
+                    Produto salvo/cadastrado com sucesso
+                  </div>
+                <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+                    {{erro}}                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row" *ngIf = "produto.id">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>ID:</label>
+                    <input type="text" class="form-control" [ngModel]="produto.id" name="id" disabled="true"/>
+                </div>
+            </div>            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Data de Cadastro</label>
+                    <input type="text" class="form-control" [ngModel]="produto.dataCadastro" name="dataCadastro" disabled="true"/>
+                </div>
+            </div>        
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Nome do Produto *:</label>
+                    <input type="text" class="form-control"  [(ngModel)]="produto.nomeProduto" name="nomeProduto"/>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Descrição do Produto *:</label>
+                    <input type="text" class="form-control" [(ngModel)]="produto.descricaoProduto" name="descricaoProduto"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Valor do Produto *:</label>
+                    <input type="text" class="form-control" [(ngModel)]="produto.valorProduto" name="valorProduto"/>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                <button type="submit" class="btn btn-success" *ngIf="!produto.id" >
+                    <i class="fa fa-save"></i> Salvar                    
+                </button>   
+
+                <button type="submit" class="btn btn-secondary" *ngIf="produto.id" >
+                    <i class="fas fa-sync"></i> Atualizar                  
+                </button>  
+
+                <button type="button" class="btn btn-danger ml-1" (click)="voltarParaListagem()">
+                    <i class="fa fa-arrow-alt-circle-left"></i> Voltar
+                </button>            
+            </div>        
+                            
+        </div>
+
+    </form>
+
+</div>
