@@ -1,27 +1,24 @@
-# ClientesApp
+# ProdutoApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+Este projeto foi gerado com Angular CLI versão 9.1.1
 
-## Development server
+## Servidor de Desenvolvimento
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Rode 'ng serve' de um dev server. Navegue para http://localhost:4200 . O app irá atualizar automaticamente se alterar qualquer um dos arquivos de origem
 
-## Code scaffolding
+## Aplicação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Clique em Listar Produtos para abrir lista de produtos cadastrados. 
 
-## Build
+## Cadastro de Produto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Clique em Novo Cadastro para cadastrar novo produto. Adicione os dados do produto e clique em salvar.
 
-## Running unit tests
+## Atualizar Produto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Clique em Editar Cadastro (botão azul) para alterações de dados. Clique em Atualizar para confirmar as atualizações.
 
-## Running end-to-end tests
+## Deletar Produto
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Clique em Deletar Produto (botão vermelho) para remover produto cadastrado. Clique em confirmar para concluir deleção.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
