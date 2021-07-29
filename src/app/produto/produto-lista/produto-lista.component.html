@@ -28,6 +28,7 @@
                        <th></th>
                     </tr>
                 </thead>
+                <tbody>
                     <tr *ngFor = "let produto of produto">
                         <td>{{ produto.id}}</td>
                         <td>{{produto.nomeProduto}}</td> 
@@ -43,7 +44,7 @@
                             </button>
                         </td>                                                                     
                     </tr>
-                <tbody>
+                
 
                 </tbody>
             </table>
@@ -54,7 +55,7 @@
             <button class="btn btn-warning" (click)="novoCadastro()"><i class="fa fa-plus" ></i> Novo Cadastro </button>            
         </div>
     </div>   
-    <div id="modalDelecao" class="modal-fade" role="role-dialog">
+    <div id="modalDelecao" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
